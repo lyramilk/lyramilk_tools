@@ -32,7 +32,6 @@ extern "C"{
 		struct lrbtree2_bucket* mpool;
 		struct lrbtree2_node* reserve;
 		long capacity;
-		int (*debug)(struct lrbtree2_ctx* ctx);
 	}lrbtree2_ctx;
 
 	enum lrbtree2_ec{

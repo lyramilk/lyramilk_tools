@@ -305,7 +305,6 @@ int main(int argc,const char* argv[])
 		// 初始化lrb
 		ioctl(0, TIOCGWINSZ, &ws);
 		ctx.compator = str_compator;
-		ctx.debug = tree_verbose_test;
 		lrbtree2_init(&ctx);
 	}
 
