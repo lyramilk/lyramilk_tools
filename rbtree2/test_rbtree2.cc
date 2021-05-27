@@ -126,8 +126,8 @@ class str_less_compator{
 int str_compator(const void* a,const void* b)
 {
 	++ltree_times;
-	long la = (long)a;
-	long lb = (long)b;
+	unsigned long la = (unsigned long)a;
+	unsigned long lb = (unsigned long)b;
 	if(la > lb) return 1;
 	if(la < lb) return -1;
 	return 0;
@@ -135,7 +135,7 @@ int str_compator(const void* a,const void* b)
 
 class str_less_compator{
   public:
-	bool operator()(long a,long b) const
+	bool operator()(unsigned long a,unsigned long b) const
 	{
 		++stl_times;
 		return a < b;
@@ -148,8 +148,8 @@ class str_less_compator{
 
 int int_compator(const void* a,const void* b)
 {
-	long la = (long)a;
-	long lb = (long)b;
+	unsigned long la = (unsigned long)a;
+	unsigned long lb = (unsigned long)b;
 	if(la > lb) return 1;
 	if(la < lb) return -1;
 	return 0;
@@ -183,7 +183,7 @@ struct verify_info
 
 int lsbtree_watch_verifycc(lrbtree2_node* node,int depth,int idx,void* userdata)
 {
-	long k = 1;
+	unsigned long k = 1;
 	if(node->left){
 		k += node->left->cc;
 	}
@@ -249,7 +249,7 @@ int main(int argc,const char* argv[])
 		/**/
 	}
 #else
-	typedef long item_type;
+	typedef unsigned long item_type;
 	typedef std::vector<item_type> vec_type;
 
 	vec_type vec;
@@ -273,7 +273,7 @@ int main(int argc,const char* argv[])
 				unsigned char c7;
 				unsigned char c8;
 			};
-			long i;
+			unsigned long i;
 		}u;
 
 
@@ -470,8 +470,8 @@ int main(int argc,const char* argv[])
 		printf("lrb迭代耗时%f,size=%d\n",test1(timestamp),qs.size());
 	}
 
-	long tstl_times = stl_times;
-	long tltree_times = ltree_times;
+	unsigned long tstl_times = stl_times;
+	unsigned long tltree_times = ltree_times;
 
 	/// 验证迭代器
 	{
@@ -567,11 +567,11 @@ int main(int argc,const char* argv[])
 
 		srand(seed);
 		for(int i=0;i<RANK_TIMES;++i){
-			long rank = rand() % vec_ordered.size();
-			long idx = 0;
+			unsigned long rank = rand() % vec_ordered.size();
+			unsigned long idx = 0;
 			std::set<item_type,str_less_compator>::const_iterator it = qs.begin();
 
-			for(long idx = 0;idx < rank;++idx){
+			for(unsigned long idx = 0;idx < rank;++idx){
 				++it;
 			}
 			if(*it != vec_ordered[rank]){
@@ -593,7 +593,7 @@ int main(int argc,const char* argv[])
 		lrbtree2_scan_init(&ctx,&iter);
 		srand(seed);
 		for(int i=0;i<RANK_TIMES;++i){
-			long rank = rand() % vec_ordered.size();
+			unsigned long rank = rand() % vec_ordered.size();
 
 			if(lrbtree2_scan_seek_rank(iter,rank,&data) != lrbtree2_ok){
 				printf("lrbtree2 rank操作错误%d\n",rank);
@@ -620,7 +620,7 @@ int main(int argc,const char* argv[])
 
 		lrbtree2_scan_init(&ctx,&iter);
 		for(int rank=0;rank<vec_ordered.size();++rank){
-			long rank2;
+			unsigned long rank2;
 
 			lrbtree2_rank(&ctx,(const void*)vec_ordered[rank],&rank2);
 
