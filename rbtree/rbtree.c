@@ -381,6 +381,7 @@ static lrbtree_node* lrbtree_new_node(lrbtree_ctx* ctx,lrbtree_node* parent,cons
 			ctx->capacity = 32;
 			lrbtree_bucket* first_bucket = malloc(sizeof(lrbtree_bucket) + (sizeof(lrbtree_node) * ctx->capacity));
 			if(first_bucket == nullptr){
+				ctx->capacity = 0;
 				return nullptr;
 			}
 			first_bucket->next = nullptr;

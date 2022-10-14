@@ -443,6 +443,7 @@ static lrbtree2_node* lrbtree2_new_node(lrbtree2_ctx* ctx,lrbtree2_node* parent,
 			ctx->capacity = 32;
 			lrbtree2_bucket* first_bucket = malloc(sizeof(lrbtree2_bucket) + (sizeof(lrbtree2_node) * ctx->capacity));
 			if(first_bucket == nullptr){
+				ctx->capacity = 0;
 				return nullptr;
 			}
 			first_bucket->next = nullptr;
