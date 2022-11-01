@@ -5,7 +5,7 @@
 extern "C"{
 #endif
 	/*
-		@brief 回调申请分配内存，分配的内存必须按align参数数值对齐（即该回调函数返回的指针必须能被align整除）
+		@brief 回调申请分配内存
 	*/
 	typedef void* (*lymalloc_cbk)(unsigned long size,void* userdata);
 	typedef void (*lyfree_cbk)(void* ptr,unsigned long size,void* userdata);
