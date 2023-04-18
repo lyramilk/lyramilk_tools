@@ -1,5 +1,5 @@
-#ifndef _lyramilk_caveoo_rbtree2_h_
-#define _lyramilk_caveoo_rbtree2_h_
+#ifndef _lyramilk_ctools_rbtree2_h_
+#define _lyramilk_ctools_rbtree2_h_
 
 #ifdef __cplusplus
 extern "C"{

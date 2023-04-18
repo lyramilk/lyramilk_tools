@@ -1,5 +1,5 @@
-#ifndef _lyramilk_caveoo_tree_h_
-#define _lyramilk_caveoo_tree_h_
+#ifndef _lyramilk_ctools_tree_h_
+#define _lyramilk_ctools_tree_h_
 
 namespace lyramilk{ namespace bintree
 {

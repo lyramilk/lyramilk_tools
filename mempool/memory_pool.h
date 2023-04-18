@@ -1,5 +1,5 @@
-#ifndef _lyramilk_cu_memory_pool_h_
-#define _lyramilk_cu_memory_pool_h_
+#ifndef _lyramilk_ctools_memory_pool_h_
+#define _lyramilk_ctools_memory_pool_h_
 
 #ifdef __cplusplus
 extern "C"{
